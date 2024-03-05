@@ -1,0 +1,47 @@
+Q1:output is 
+hey from message1
+because there is NO method another 
+لا يوجد ميثود تتعارض معه بذلك هو الاول
+------------------------------
+
+Q2:output is 
+hey from message1
+hey from message2
+because method getMessage1 has Qualifier 1 that means method getMessage2 not excute until method one excute
+الميثود الاولى لها  تصنيف اول و ليس لديها اراقيومنت و كذلك الميثود الثانية لا تنفذ قبل الاولى لان لديها بالاراقيومنت تصنيف اول يشير للمثود الاولى 
+------------------------------
+Q3:output is  
+hey from message1
+hey from message3
+hey from message2
+because method getMessage1 has Qualifier 1 that means method is it first method excute,
+and method getMessage2 has Qualifier 3 in its arugment that means method which has Qualifier 3 must excute before method getMessage2 ,last method getMessage2 excutes.
+لان الميثود الاولى ليس لديها اراقيومنت و لديها تصنيف اول لذلك تنفذ ثم التصنيف الثاني لا يمكن تنفيذه حتى ينفذ الثالث لانه مرسل التنصيف الثالث بالاراقيومنت تبعه و اخير المثود الثانية تنفذ 
+------------------------------
+
+Q4:output is
+hey from message1
+hey from Main controller
+hey from message3
+hey from message2
+because method getMessage1 has Qualifier 1 that means method is it the first method excute and the second method which its argument has Qualifier 1, and method getMessage2 has Qualifier 3 in its arugment that means method which has Qualifier 3 must excute before method getMessage2 ,last method getMessage2 excutes.
+ان الميثود الاولى ليس لديها اراقيومنت و لديها تصنيف اول لذلك تنفذ ثمMain controller المثود التي ارسل لها  بالاراقيومنت التصنيف الاولى تنفذ و من ثم التصنيف الثاني لا يمكن تنفيذه حتى ينفذ الثالث لانه مرسل التنصيف الثالث بالاراقيومنت تبعه و اخيرا ميثود الثانية تنفذ  
+------------------------------
+
+Q5:output is 
+hey from message3
+hey from message2
+hey from Main controller
+hey from message1
+
+because method getMessage1 has Object in its argument that means there is no data in Container refers to it,so the spring boot start with method which has no argument ,so the first method is getMessage3 and it return String "3"
+to the contianer to store it, so the returned value and search whos method next, it saw method getMessage2 has argument String 
+and it has Qualifier 2 (not excute before method 3) so it's second method to excuted ,then spring went to the method has String argument to save return data in it, and then excuted the method 
+في 
+Container
+  لا يوجد بيانات خاصة في الاوبجكت من نوع مين كنترولار لتنفيذ التصنيف الاولى 
+لذلك سوف يبدا بالميثود التي ليس لديها اراقيومنت و هي المثود الثالثة و من ثم الميثود الثانية لان لدى 
+Container
+بيانات مسترجعه من الثالثة من نفس نوع الميثود الثانية و  كذلك الميثود الثانية لا يمكن تنفيذها قبل الثالثة  
+ثم   
+الميثود التي مرسل لديها بالاراقيومنت التصنيف الثاني تنفذ ثم الميثود الاولى تنفذ اخيرا 
